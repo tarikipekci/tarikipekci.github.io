@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarık İpekçi — Game Developer · Unity & Unreal Engine 5</title>
+<meta name="description" content="Game developer from Istanbul with 3+ years across five studios. Shipped HELLBREAK on Steam. Unity & Unreal Engine 5, multiplayer, AI, and performance optimization. Open to remote roles.">
+<meta property="og:title" content="Tarık İpekçi — Game Developer">
+<meta property="og:description" content="3+ years, five studios, one shipped Steam title and another on the way. Unity & UE5 developer open to remote roles worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tarikipekci.com/">
+<link rel="canonical" href="https://www.tarikipekci.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yılmaz Tarık İpekçi",
+  "jobTitle": "Game Developer",
+  "url": "https://www.tarikipekci.com/",
+  "email": "mailto:ytarik.ipekci@gmail.com",
+  "sameAs": ["https://github.com/tarikipekci", "https://linkedin.com/in/tarikipekci"],
+  "knowsAbout": ["Unreal Engine 5", "Unity", "C++", "C#", "Multiplayer Networking", "Game AI"],
+  "address": {"@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR"}
+}
+</script>
+<style>
+  :root{
+    --bg:#181310;
+    --panel:#201914;
+    --panel-2:#1b1510;
+    --line:#3a2d1d;
+    --text:#f2ece2;
+    --muted:#a89a87;
+    --accent:#ffb454;
+    --accent-dim:rgba(255,180,84,.14);
+    --ok:#7dd88f;
+    --steam:#66c0f4;
+    --danger:#e5484d;
+    --display:'Chakra Petch',sans-serif;
+    --body:'Inter',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--accent);color:#181310}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  svg.px{image-rendering:pixelated;shape-rendering:crispEdges;display:block}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}
+  .reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(24,19,16,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+  .logo{font-family:var(--mono);font-size:14px;text-decoration:none;color:var(--muted);white-space:nowrap}
+  .logo b{color:var(--accent);font-weight:500}
+  .nav-links{display:flex;gap:22px;list-style:none}
+  .nav-links a{
+    font-family:var(--mono);font-size:13px;color:var(--muted);
+    text-decoration:none;transition:color .15s;padding:4px 0;
+    border-bottom:1px solid transparent;
+  }
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a.here{color:var(--accent);border-bottom-color:var(--accent)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .score{
+    font-family:var(--mono);font-size:12.5px;color:var(--accent);
+    white-space:nowrap;letter-spacing:.05em;
+    border:1px solid var(--line);border-radius:4px;padding:5px 10px;
+    background:var(--panel-2);
+  }
+  .score.bump{animation:bump .25s ease}
+  @keyframes bump{40%{transform:scale(1.18)}}
+  .burger{
+    display:none;border:1px solid var(--line);background:var(--panel-2);
+    border-radius:4px;cursor:pointer;padding:7px 9px;color:var(--text);
+  }
+  .burger svg{display:block}
+  .mobile-menu{
+    display:none;position:absolute;top:60px;left:0;right:0;
+    background:rgba(24,19,16,.98);border-bottom:1px solid var(--line);
+    padding:10px 24px 16px;
+  }
+  .mobile-menu.open{display:block}
+  .mobile-menu a{
+    display:block;font-family:var(--mono);font-size:14px;color:var(--muted);
+    text-decoration:none;padding:11px 4px;border-bottom:1px solid var(--line);
+  }
+  .mobile-menu a:last-child{border-bottom:none}
+  .mobile-menu a:active{color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:92px 0 76px;position:relative;overflow:hidden}
+  .hero::after{
+    content:"";position:absolute;top:-180px;left:-120px;
+    width:640px;height:640px;pointer-events:none;
+    background:radial-gradient(circle,rgba(255,180,84,.10),transparent 62%);
+  }
+  .hero-grid{
+    position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:
+      linear-gradient(var(--line) 1px,transparent 1px),
+      linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse 75% 90% at 50% 0%,black 20%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 75% 90% at 50% 0%,black 20%,transparent 75%);
+  }
+  .hero .wrap{position:relative}
+  .eyebrow{
+    font-family:var(--mono);font-size:13px;color:var(--accent);
+    letter-spacing:.06em;margin-bottom:18px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+  h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(38px,6.6vw,64px);line-height:1.07;letter-spacing:-.01em;
+    margin-bottom:22px;max-width:17ch;
+  }
+  h1 .amp{color:var(--accent)}
+  .hero p{max-width:58ch;color:var(--muted);font-size:17px;margin-bottom:34px}
+  .hero p strong{color:var(--text);font-weight:500}
+  .hero p a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(255,180,84,.35)}
+  .hero p a:hover{border-bottom-color:var(--accent)}
+
+  /* floating sprites */
+  .sprite{
+    position:absolute;cursor:pointer;border:none;background:none;padding:6px;
+    transition:transform .15s;z-index:5;
+  }
+  .sprite:hover{transform:scale(1.12)}
+  .sprite.float1{animation:floaty 3.2s ease-in-out infinite}
+  .sprite.float2{animation:floaty 4s ease-in-out .8s infinite}
+  .sprite.float3{animation:floaty 3.6s ease-in-out 1.6s infinite}
+  @keyframes floaty{50%{translate:0 -12px}}
+  .sprite.hit{animation:spritehit .5s ease forwards}
+  @keyframes spritehit{
+    30%{transform:scale(1.3) rotate(8deg)}
+    100%{transform:scale(0) rotate(140deg);opacity:0}
+  }
+  .sprite.respawn{animation:respawn .4s ease}
+  @keyframes respawn{from{transform:scale(0);opacity:0}}
+  .zombie-spot{top:120px;right:40px}
+  .invader-spot1{top:270px;right:150px}
+  .invader-spot2{top:100px;right:260px}
+  .sprite-hint{
+    position:absolute;top:78px;right:48px;
+    font-family:var(--mono);font-size:11px;color:var(--muted);opacity:.8;
+    pointer-events:none;
+  }
+  @media (max-width:900px){
+    .invader-spot2{display:none}
+    .zombie-spot{top:auto;bottom:30px;right:24px}
+    .invader-spot1{top:auto;bottom:120px;right:80px}
+    .sprite-hint{display:none}
+  }
+
+  /* HUD stat overlay */
+  .hud{
+    display:inline-block;
+    border:1px solid var(--line);
+    background:var(--panel-2);
+    font-family:var(--mono);font-size:13px;
+    padding:14px 18px;border-radius:4px;
+    position:relative;
+  }
+  .hud::before,.hud::after,
+  .hud .c3::before,.hud .c3::after{
+    content:"";position:absolute;width:10px;height:10px;border-color:var(--accent);border-style:solid;
+  }
+  .hud::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+  .hud::after{top:-1px;right:-1px;border-width:2px 2px 0 0}
+  .hud .c3::before{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+  .hud .c3::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+  .hud-row{display:flex;gap:10px;padding:3px 0;white-space:nowrap}
+  .hud-key{color:var(--muted);min-width:86px}
+  .hud-val{color:var(--text)}
+  .hud-val.ok{color:var(--ok)}
+  .blink{animation:blink 1.4s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hud-hearts{display:flex;gap:4px;align-items:center}
+
+  .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    font-family:var(--mono);font-size:14px;text-decoration:none;
+    padding:12px 22px;border-radius:4px;transition:transform .15s,background .15s,border-color .15s,color .15s,box-shadow .15s;
+    display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;
+  }
+  .btn-primary{background:var(--accent);color:#181310;font-weight:500}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,180,84,.25)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:none}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* stats strip */
+  .stats{
+    margin-top:52px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  }
+  .stat{background:var(--panel-2);padding:20px 16px;text-align:center}
+  .stat b{
+    font-family:var(--display);font-size:clamp(24px,4vw,34px);font-weight:700;
+    color:var(--accent);display:block;line-height:1.1;
+  }
+  .stat span{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.08em}
+  @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- sections ---------- */
+  section{padding:76px 0}
+  .sec-head{margin-bottom:38px;border-left:3px solid var(--accent);padding-left:20px}
+  .sec-label{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:8px}
+  .sec-title{font-family:var(--display);font-weight:600;font-size:clamp(26px,4vw,34px)}
+  .sec-sub{color:var(--muted);margin-top:8px;max-width:60ch}
+  .sec-sub a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(255,180,84,.35)}
+  .sec-sub a:hover{border-bottom-color:var(--accent)}
+
+  /* ---------- featured ---------- */
+  .featured{
+    border:1px solid var(--line);background:var(--panel);border-radius:6px;
+    padding:34px;margin-bottom:22px;position:relative;overflow:hidden;
+    transition:border-color .2s,box-shadow .2s;
+  }
+  .featured:hover{border-color:rgba(255,180,84,.5);box-shadow:0 10px 34px rgba(0,0,0,.35),0 0 24px rgba(255,180,84,.07)}
+  .featured::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--accent),transparent 60%);
+  }
+  .badge{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--accent);background:var(--accent-dim);
+    padding:4px 10px;border-radius:3px;display:inline-block;margin-bottom:14px;
+  }
+  .badge.steam{color:var(--steam);background:rgba(102,192,244,.1)}
+  .badge.live{color:var(--ok);background:rgba(125,216,143,.1)}
+  .badge.live::before{content:"●";margin-right:6px;animation:blink 1.4s steps(1) infinite}
+  .featured h3{font-family:var(--display);font-size:26px;font-weight:600;margin-bottom:4px}
+  .featured .subtitle{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .featured p{color:var(--muted);max-width:66ch;margin-bottom:18px}
+  .featured p strong{color:var(--text);font-weight:500}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .tag{
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+    border:1px solid var(--line);padding:4px 10px;border-radius:3px;
+  }
+  .plink{
+    font-family:var(--mono);font-size:13px;color:var(--accent);
+    text-decoration:none;border-bottom:1px solid transparent;
+  }
+  .plink:hover{border-bottom-color:var(--accent)}
+  .plink.dim{color:var(--muted);cursor:default}
+
+  .classified{
+    background:
+      repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,180,84,.035) 22px 44px),
+      var(--panel);
+  }
+  .redacted{
+    display:inline-block;position:relative;color:transparent;user-select:none;
+    background:linear-gradient(90deg,#39424f 25%,#4a5361 50%,#39424f 75%);
+    background-size:200% 100%;border-radius:3px;
+    animation:shimmer 2.6s linear infinite;
+  }
+  @keyframes shimmer{to{background-position:-200% 0}}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+  @media (max-width:800px){.two-col{grid-template-columns:1fr}}
+
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+  .card{
+    border:1px solid var(--line);background:var(--panel);border-radius:6px;
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+    transition:border-color .2s,transform .2s,box-shadow .2s;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.35),0 0 20px rgba(255,180,84,.08)}
+  .card-top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .card h3{font-family:var(--display);font-size:18px;font-weight:600}
+  .card p{color:var(--muted);font-size:14.5px;flex:1}
+  .card .plink{align-self:flex-start}
+
+  /* ---------- loadout ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .skill-box{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:24px;transition:border-color .2s,transform .2s}
+  .skill-box:hover{border-color:rgba(255,180,84,.4);transform:translateY(-2px)}
+  .skill-box h3{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:14px;letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+  .skill-box ul{list-style:none}
+  .skill-box li{
+    color:var(--muted);font-size:14.5px;padding:5px 0 5px 18px;position:relative;
+  }
+  .skill-box li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:11px;top:9px}
+  .skill-box li strong{color:var(--text);font-weight:500}
+
+  /* ---------- achievements ---------- */
+  .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+  .ach{
+    display:flex;gap:16px;align-items:center;text-align:left;
+    border:1px solid var(--line);background:var(--panel);border-radius:6px;
+    padding:16px 18px;transition:border-color .2s,transform .2s;cursor:pointer;
+    font-family:var(--body);
+  }
+  .ach:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .ach.pop{animation:achpop .4s ease}
+  @keyframes achpop{40%{transform:scale(1.04)}}
+  .ach-icon{
+    width:52px;height:52px;flex-shrink:0;border-radius:4px;
+    background:var(--accent-dim);border:1px solid rgba(255,180,84,.3);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ach h3{font-family:var(--display);font-size:15px;font-weight:600;margin-bottom:2px;color:var(--text)}
+  .ach p{color:var(--muted);font-size:13.5px;line-height:1.45}
+  .ach-unlocked{font-family:var(--mono);font-size:10.5px;color:var(--ok);letter-spacing:.08em;display:block;margin-bottom:2px}
+
+  /* ---------- quest log (compact) ---------- */
+  .xp{border-left:1px solid var(--line);padding-left:34px;margin-left:6px}
+  .xp-item{position:relative;padding-bottom:30px}
+  .xp-item:last-child{padding-bottom:0}
+  .xp-item::before{
+    content:"";position:absolute;left:-39px;top:8px;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--accent);
+  }
+  .xp-item.active::before{background:var(--ok);border-color:var(--ok);box-shadow:0 0 10px rgba(125,216,143,.5)}
+  .xp-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .xp-item h3{font-family:var(--display);font-size:18px;font-weight:600}
+  .xp-item h3 small{font-family:var(--mono);font-size:12.5px;font-weight:400;color:var(--accent);margin-left:8px}
+  .xp-when{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .xp-sum{color:var(--muted);font-size:14.5px;max-width:70ch;margin-top:4px}
+  .xp-sum strong{color:var(--text);font-weight:500}
+  .xp-cta{margin-top:28px;padding-left:6px}
+
+  /* ---------- about strip ---------- */
+  .about-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .about-box{border:1px solid var(--line);background:var(--panel-2);border-radius:6px;padding:22px}
+  .about-box h3{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-bottom:10px;letter-spacing:.05em}
+  .about-box p{color:var(--muted);font-size:14.5px}
+  .about-box p strong{color:var(--text);font-weight:500}
+
+  /* ---------- contact ---------- */
+  .contact{
+    border:1px solid var(--line);background:var(--panel);border-radius:6px;
+    padding:52px 32px 56px;text-align:center;position:relative;overflow:hidden;
+  }
+  .contact::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  }
+  .contact .press{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.2em;margin-bottom:14px}
+  .contact h2{font-family:var(--display);font-size:clamp(24px,4vw,32px);font-weight:600;margin-bottom:12px}
+  .contact p{color:var(--muted);max-width:54ch;margin:0 auto 30px}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* question block — symmetric layout */
+  .qblock-area{
+    margin-top:44px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .qblock-wrap{position:relative}
+  .qblock{
+    border:none;background:none;cursor:pointer;padding:0;display:block;
+    transition:transform .1s;
+  }
+  .qblock.bounce{animation:qbounce .3s ease}
+  @keyframes qbounce{40%{transform:translateY(-14px)}}
+  .qblock-label{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    text-align:center;min-height:17px;
+  }
+  .coin-fly{
+    position:absolute;left:50%;top:0;translate:-50% 0;
+    pointer-events:none;opacity:0;
+  }
+  .coin-fly.go{animation:coinfly .7s ease forwards}
+  @keyframes coinfly{
+    0%{opacity:1;translate:-50% -10px;transform:rotateY(0)}
+    100%{opacity:0;translate:-50% -80px;transform:rotateY(540deg)}
+  }
+
+  .score-pop{
+    position:fixed;pointer-events:none;z-index:100;
+    font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:500;
+    animation:scorepop .8s ease forwards;text-shadow:0 2px 8px rgba(0,0,0,.6);
+  }
+  @keyframes scorepop{
+    0%{opacity:1;translate:0 0}
+    100%{opacity:0;translate:0 -44px}
+  }
+
+  /* achievement toast */
+  .toast{
+    position:fixed;right:20px;bottom:-130px;z-index:120;
+    display:flex;gap:14px;align-items:center;
+    background:var(--panel);border:1px solid var(--accent);border-radius:6px;
+    padding:14px 18px;max-width:330px;
+    box-shadow:0 12px 40px rgba(0,0,0,.5);
+    transition:bottom .5s cubic-bezier(.2,.9,.3,1.2);
+  }
+  .toast.show{bottom:20px}
+  .toast .ach-icon{width:44px;height:44px}
+  .toast h4{font-family:var(--display);font-size:14px;color:var(--text)}
+  .toast p{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .toast .ach-unlocked{margin-bottom:1px}
+
+  /* ---------- footer + fox ---------- */
+  footer{border-top:1px solid var(--line);padding:28px 0;margin-top:24px;position:relative}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .fox-track{position:relative;height:44px;overflow:hidden}
+  .fox{
+    position:absolute;bottom:0;left:-70px;
+    border:none;background:none;cursor:pointer;padding:0;
+    animation:foxrun 16s linear infinite;
+  }
+  @keyframes foxrun{0%{left:-70px}100%{left:100%}}
+  .fox .body{animation:foxbob .3s steps(2) infinite}
+  @keyframes foxbob{50%{translate:0 -3px}}
+  .fox.jump .body{animation:foxjump .5s ease}
+  @keyframes foxjump{50%{translate:0 -26px}}
+  @media (prefers-reduced-motion:reduce){.fox{left:24px;animation:none}}
+
+  @media (max-width:700px){
+    .nav-links{display:none}
+    .burger{display:block}
+  }
+  @media (max-width:640px){
+    .hero{padding:60px 0 130px}
+    section{padding:56px 0}
+    .featured{padding:24px}
+    .hud-key{min-width:0}
+    .hero p{font-size:16px}
+    .toast{right:12px;left:12px;max-width:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>~/</b>Tarikipekci</a>
+    <ul class="nav-links">
+      <li><a href="#games" data-nav="games">Games</a></li>
+      <li><a href="#projects" data-nav="projects">Side Quests</a></li>
+      <li><a href="#loadout" data-nav="loadout">Loadout</a></li>
+      <li><a href="#quests" data-nav="quests">Quest Log</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="score" id="score" title="Find and click the pixel critters!">SCORE 000000</div>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#games">Games</a>
+    <a href="#projects">Side Quests</a>
+    <a href="#loadout">Loadout</a>
+    <a href="#quests">Quest Log</a>
+    <a href="#contact">Contact</a>
+    <a href="Tarik_Ipekci_Game_Developer_CV.pdf" download>Download CV (PDF)</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <span class="sprite-hint">← click the invaders</span>
+
+    <button class="sprite float1 zombie-spot" data-points="25" aria-label="Pixel zombie — click to defeat, worth 25 points">
+      <svg class="px body" width="44" height="56" viewBox="0 0 11 14" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="0" width="5" height="1" fill="#3e7a4a"/>
+        <rect x="2" y="1" width="7" height="1" fill="#57a868"/>
+        <rect x="2" y="2" width="7" height="1" fill="#6fc482"/>
+        <rect x="2" y="3" width="1" height="1" fill="#6fc482"/><rect x="3" y="3" width="2" height="1" fill="#d33"/><rect x="5" y="3" width="1" height="1" fill="#6fc482"/><rect x="6" y="3" width="2" height="1" fill="#d33"/><rect x="8" y="3" width="1" height="1" fill="#6fc482"/>
+        <rect x="2" y="4" width="7" height="1" fill="#6fc482"/>
+        <rect x="3" y="5" width="5" height="1" fill="#57a868"/>
+        <rect x="4" y="6" width="3" height="1" fill="#4a4f3a"/>
+        <rect x="0" y="7" width="11" height="1" fill="#5c6247"/>
+        <rect x="0" y="8" width="2" height="1" fill="#6fc482"/><rect x="2" y="8" width="7" height="1" fill="#5c6247"/><rect x="9" y="8" width="2" height="1" fill="#6fc482"/>
+        <rect x="3" y="9" width="5" height="1" fill="#5c6247"/>
+        <rect x="3" y="10" width="5" height="1" fill="#4a4f3a"/>
+        <rect x="3" y="11" width="2" height="2" fill="#3a3f2e"/><rect x="6" y="11" width="2" height="2" fill="#3a3f2e"/>
+        <rect x="2" y="13" width="3" height="1" fill="#2c3024"/><rect x="6" y="13" width="3" height="1" fill="#2c3024"/>
+      </svg>
+    </button>
+
+    <button class="sprite float2 invader-spot1" data-points="10" aria-label="Pixel invader — click to defeat, worth 10 points">
+      <svg class="px body" width="40" height="30" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" fill="#ffb454">
+        <rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/>
+        <rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/>
+        <rect x="2" y="2" width="7" height="1"/>
+        <rect x="1" y="3" width="2" height="1"/><rect x="4" y="3" width="3" height="1"/><rect x="8" y="3" width="2" height="1"/>
+        <rect x="0" y="4" width="11" height="1"/>
+        <rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="7" height="1"/><rect x="10" y="5" width="1" height="1"/>
+        <rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/>
+        <rect x="3" y="7" width="2" height="1"/><rect x="6" y="7" width="2" height="1"/>
+      </svg>
+    </button>
+    <button class="sprite float3 invader-spot2" data-points="10" aria-label="Pixel invader — click to defeat, worth 10 points">
+      <svg class="px body" width="36" height="27" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" fill="#66c0f4">
+        <rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/>
+        <rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/>
+        <rect x="2" y="2" width="7" height="1"/>
+        <rect x="1" y="3" width="2" height="1"/><rect x="4" y="3" width="3" height="1"/><rect x="8" y="3" width="2" height="1"/>
+        <rect x="0" y="4" width="11" height="1"/>
+        <rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="7" height="1"/><rect x="10" y="5" width="1" height="1"/>
+        <rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/>
+        <rect x="3" y="7" width="2" height="1"/><rect x="6" y="7" width="2" height="1"/>
+      </svg>
+    </button>
+
+    <div class="wrap">
+      <div class="eyebrow">GAME DEVELOPER · UNITY &amp; UNREAL ENGINE 5</div>
+      <h1>I build the systems that make games <span class="amp">fun</span>.</h1>
+      <p>I'm Tarık, a game developer based in Istanbul. Over the past three years I've worked with <strong>five studios</strong>, mostly on remote international teams. My code is live in <a href="https://store.steampowered.com/app/3043760/HELLBREAK/" target="_blank" rel="noopener">HELLBREAK</a>, a roguelite arena shooter on Steam, and my next game is headed there too. Most days you'll find me deep in the stuff players feel but never see: multiplayer sync, enemy AI, save systems, frame budgets.</p>
+
+      <div class="hud" role="note" aria-label="Quick facts">
+        <span class="c3" aria-hidden="true"></span>
+        <div class="hud-row"><span class="hud-key">HP</span>
+          <span class="hud-hearts" aria-label="Full health">
+            <svg class="px" width="14" height="12" viewBox="0 0 7 6" fill="#e5484d"><rect x="1" y="0" width="2" height="1"/><rect x="4" y="0" width="2" height="1"/><rect x="0" y="1" width="7" height="2"/><rect x="1" y="3" width="5" height="1"/><rect x="2" y="4" width="3" height="1"/><rect x="3" y="5" width="1" height="1"/></svg>
+            <svg class="px" width="14" height="12" viewBox="0 0 7 6" fill="#e5484d"><rect x="1" y="0" width="2" height="1"/><rect x="4" y="0" width="2" height="1"/><rect x="0" y="1" width="7" height="2"/><rect x="1" y="3" width="5" height="1"/><rect x="2" y="4" width="3" height="1"/><rect x="3" y="5" width="1" height="1"/></svg>
+            <svg class="px" width="14" height="12" viewBox="0 0 7 6" fill="#e5484d"><rect x="1" y="0" width="2" height="1"/><rect x="4" y="0" width="2" height="1"/><rect x="0" y="1" width="7" height="2"/><rect x="1" y="3" width="5" height="1"/><rect x="2" y="4" width="3" height="1"/><rect x="3" y="5" width="1" height="1"/></svg>
+          </span>
+        </div>
+        <div class="hud-row"><span class="hud-key">ENGINES</span><span class="hud-val">Unity (C#) · UE5 (C++/Blueprint)</span></div>
+        <div class="hud-row"><span class="hud-key">LOCATION</span><span class="hud-val">Istanbul · UTC+3 · CET-friendly</span></div>
+        <div class="hud-row"><span class="hud-key">SHIPPED</span><span class="hud-val">HELLBREAK (Steam)</span></div>
+        <div class="hud-row"><span class="hud-key">STATUS</span><span class="hud-val ok">OPEN TO REMOTE ROLES<span class="blink">_</span></span></div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#games">See my work</a>
+        <a class="btn btn-ghost" href="Tarik_Ipekci_Game_Developer_CV.pdf" download>
+          <svg width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M6.5 1v8m0 0L3 5.5M6.5 9L10 5.5M1 12.5h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download CV
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/tarikipekci" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+
+      <div class="stats reveal" aria-label="Career stats">
+        <div class="stat"><b data-count="3" data-suffix="+">0</b><span>YEARS EXP</span></div>
+        <div class="stat"><b data-count="5">0</b><span>STUDIOS</span></div>
+        <div class="stat"><b data-count="1" data-suffix=" + 1">0</b><span>STEAM TITLES</span></div>
+        <div class="stat"><b data-count="10" data-suffix="+">0</b><span>LOCALIZED LANGS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">// Shipped &amp; In Development</div>
+        <h2 class="sec-title">The Big Ones</h2>
+      </div>
+
+      <article class="featured reveal">
+        <span class="badge steam">RELEASED ON STEAM · VERY POSITIVE</span>
+        <h3>HELLBREAK</h3>
+        <div class="subtitle">Roguelite arena FPS · Double Barrel Games</div>
+        <p>A fast-paced roguelite arena FPS where you fight through the arenas of Hell to win back your soul. I started at Double Barrel Games part-time, was <strong>promoted to full-time</strong>, and stayed on from the first demo through Early Access, the 1.0 launch and post-release support. The <strong>HUD and core UI are mine</strong>, written in C++ and Blueprint: off-screen enemy direction indicators, the health bar, the souls counter, the skill cooldown system. And when an enemy moved wrong or an ability misfired, that bug landed on my desk.</p>
+        <div class="tags">
+          <span class="tag">Unreal Engine 5</span>
+          <span class="tag">C++ / Blueprint</span>
+          <span class="tag">HUD &amp; UI</span>
+          <span class="tag">Demo → 1.0 → Post-release</span>
+        </div>
+        <a class="plink" href="https://store.steampowered.com/app/3043760/HELLBREAK/" target="_blank" rel="noopener">View on Steam →</a>
+      </article>
+
+      <article class="featured classified reveal">
+        <span class="badge live">IN DEVELOPMENT · HEADING TO STEAM</span>
+        <h3>Project: <span class="redacted" aria-label="Title not yet announced">████████</span></h3>
+        <div class="subtitle">4-player co-op zombie defense · Solo developer</div>
+        <p>My next game is a <strong>4-player co-op zombie defense</strong> title in Unreal Engine 5. <strong>Steam multiplayer is already up and running</strong> and a playable demo is in testers' hands. Right now I'm obsessing over kill-feel: dismemberment, trap-triggered ragdolls, chain-reaction physics that turn the end of a wave into a small disaster. A mutation system keeps any two runs from playing the same. Name and store page are coming. The zombies floating around this site are the early recruits.</p>
+        <div class="tags">
+          <span class="tag">Unreal Engine 5</span>
+          <span class="tag">Steam Multiplayer</span>
+          <span class="tag">4-player Co-op</span>
+          <span class="tag">Physics-driven Combat</span>
+        </div>
+        <span class="plink dim">Steam page — coming soon</span>
+      </article>
+
+      <div class="two-col">
+        <article class="featured reveal d1" style="margin-bottom:0">
+          <span class="badge">SENIOR PROJECT · UNREAL ENGINE 5</span>
+          <h3>Co-Op Survival</h3>
+          <div class="subtitle">Third-person co-op survival · Steam OSS</div>
+          <p>My graduation project: third-person survival for up to <strong>4 players over Steam</strong>. Inventory, crafting, base building, a day–night cycle and enemy AI, all synchronized through Steam Online Subsystem, with a full HUD on top. Building an entire multiplayer survival loop alone taught me more about netcode than any tutorial ever did.</p>
+          <div class="tags">
+            <span class="tag">Unreal Engine 5</span>
+            <span class="tag">Steam OSS</span>
+            <span class="tag">Crafting &amp; Building</span>
+          </div>
+          <a class="plink" href="https://github.com/tarikipekci/SeniorProject" target="_blank" rel="noopener">View source →</a>
+        </article>
+
+        <article class="featured reveal d2" style="margin-bottom:0">
+          <span class="badge">PC &amp; MOBILE · UNITY</span>
+          <h3>Ranch Gallop</h3>
+          <div class="subtitle">3D endless runner · Procedural generation</div>
+          <p>A 3D endless runner built around a <strong>procedurally generated infinite level</strong>, with a save system and tile destruction that keeps memory flat however far you run. It holds its frame rate on <strong>PC and on mobile</strong>, which matters, because an endless runner that stutters isn't endless. It's over.</p>
+          <div class="tags">
+            <span class="tag">Unity · C#</span>
+            <span class="tag">Procedural Generation</span>
+            <span class="tag">Mobile Optimization</span>
+          </div>
+          <a class="plink" href="https://github.com/tarikipekci/Endless-Runner" target="_blank" rel="noopener">View source →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">// Side Quests</div>
+        <h2 class="sec-title">More From The Workshop</h2>
+        <p class="sec-sub">Personal games and editor tools where I test ideas and break things. Everything here is open source, so go read the code.</p>
+      </div>
+      <div class="proj-grid">
+        <article class="card reveal">
+          <div class="card-top"><span>UNREAL ENGINE 5</span><span>EDITOR TOOL</span></div>
+          <h3>Level Asset Analyzer</h3>
+          <p>An Editor Utility Widget that scans every Static Mesh Actor in a level: triangle and vertex counts, material usage, collision complexity. It sorts actors into Low, Mid and High poly folders, flags duplicate meshes and raises tiered warnings before performance problems make it into a build.</p>
+          <a class="plink" href="https://github.com/tarikipekci/Level-Asset-Analyzer" target="_blank" rel="noopener">View source →</a>
+        </article>
+        <article class="card reveal d1">
+          <div class="card-top"><span>UNITY</span><span>ONLINE CO-OP</span></div>
+          <h3>Co-Op Survival 2D</h3>
+          <p>Online zombie survival with synchronized 4-player multiplayer on Netcode for GameObjects. Dynamic wave spawning, varied enemy AI and an upgrade system, all on a clean SOLID architecture.</p>
+          <a class="plink" href="https://github.com/tarikipekci/Co-op-Survival" target="_blank" rel="noopener">View source →</a>
+        </article>
+        <article class="card reveal d2">
+          <div class="card-top"><span>UNITY</span><span>STRATEGY</span></div>
+          <h3>Tower Defense</h3>
+          <p>A customizable wave system, several animated enemy types and turrets you can upgrade or sell back. Tuned for actual strategy rather than tower spam.</p>
+          <a class="plink" href="https://github.com/tarikipekci/TowerDefense" target="_blank" rel="noopener">View source →</a>
+        </article>
+        <article class="card reveal d3">
+          <div class="card-top"><span>UNITY</span><span>PUZZLE</span></div>
+          <h3>Animal Match</h3>
+          <p>Match-3 with special tile interactions like dynamite and four-leaf clovers, plus a save system that tracks best scores and level completion.</p>
+          <a class="plink" href="https://github.com/tarikipekci/Match3-Puzzle-Game" target="_blank" rel="noopener">View source →</a>
+        </article>
+        <article class="card reveal">
+          <div class="card-top"><span>UNITY</span><span>PLATFORMER</span></div>
+          <h3>Fox's Tale</h3>
+          <p>A 2D pixel-art platformer with double jump, dash and enemy-bounce controls, boss fights, checkpoints and a hand-made pixel UI. That's its hero running along the bottom of this page.</p>
+          <a class="plink" href="https://github.com/tarikipekci/Fox_Tale" target="_blank" rel="noopener">View source →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="loadout">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">// Loadout</div>
+        <h2 class="sec-title">What I Bring To The Party</h2>
+        <p class="sec-sub">Everything here has been used on real projects. Most of it on shipped ones.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-box reveal">
+          <h3>ENGINES &amp; LANGUAGES</h3>
+          <ul>
+            <li><strong>Unreal Engine 5</strong> — C++ &amp; Blueprint</li>
+            <li><strong>Unity</strong> — C#</li>
+            <li>Java, C</li>
+          </ul>
+        </div>
+        <div class="skill-box reveal d1">
+          <h3>GAMEPLAY &amp; SYSTEMS</h3>
+          <ul>
+            <li>Inventory, crafting, building</li>
+            <li>Save/load, day–night, resources</li>
+            <li>Procedural grids &amp; endless levels</li>
+          </ul>
+        </div>
+        <div class="skill-box reveal d2">
+          <h3>MULTIPLAYER &amp; AI</h3>
+          <ul>
+            <li><strong>Netcode for GameObjects</strong></li>
+            <li><strong>Steam OSS</strong>, state sync</li>
+            <li>Behavior Trees, custom nodes</li>
+          </ul>
+        </div>
+        <div class="skill-box reveal d3">
+          <h3>PERFORMANCE</h3>
+          <ul>
+            <li>Object Pooling, LODs, Data Tables</li>
+            <li>Tick &amp; collision optimization</li>
+            <li><strong>2–2.5× frame-rate gains</strong>, shipped</li>
+          </ul>
+        </div>
+        <div class="skill-box reveal">
+          <h3>UI / UX &amp; LOCALIZATION</h3>
+          <ul>
+            <li>HUD &amp; gameplay UI, custom elements</li>
+            <li><strong>10+ language</strong> localization pipelines</li>
+            <li>Pixel-art &amp; game feel</li>
+          </ul>
+        </div>
+        <div class="skill-box reveal d1">
+          <h3>CRAFT &amp; WORKFLOW</h3>
+          <ul>
+            <li>Editor tooling — Utility Widgets</li>
+            <li>SOLID &amp; design patterns</li>
+            <li>Git, SVN, Diversion</li>
+            <li>Jira, Notion, Miro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">// Achievements</div>
+        <h2 class="sec-title">Unlocked So Far</h2>
+        <p class="sec-sub">Click one — they're proud of themselves.</p>
+      </div>
+      <div class="ach-grid">
+        <button class="ach reveal" data-points="5">
+          <div class="ach-icon" aria-hidden="true">
+            <svg class="px" width="30" height="30" viewBox="0 0 10 10" fill="#ffb454"><rect x="1" y="1" width="8" height="1"/><rect x="0" y="2" width="1" height="2"/><rect x="9" y="2" width="1" height="2"/><rect x="1" y="2" width="8" height="3"/><rect x="2" y="5" width="6" height="1"/><rect x="3" y="6" width="4" height="1"/><rect x="4" y="7" width="2" height="1"/><rect x="3" y="8" width="4" height="1"/><rect x="2" y="9" width="6" height="1"/></svg>
+          </div>
+          <div>
+            <span class="ach-unlocked">ACHIEVEMENT UNLOCKED</span>
+            <h3>Shipped It</h3>
+            <p>Code live in HELLBREAK on Steam — demo to 1.0 and beyond.</p>
+          </div>
+        </button>
+        <button class="ach reveal d1" data-points="5">
+          <div class="ach-icon" aria-hidden="true">
+            <svg class="px" width="26" height="30" viewBox="0 0 8 10" fill="#ffd75e"><rect x="4" y="0" width="3" height="1"/><rect x="3" y="1" width="3" height="1"/><rect x="2" y="2" width="3" height="1"/><rect x="1" y="3" width="3" height="1"/><rect x="0" y="4" width="6" height="2"/><rect x="3" y="6" width="2" height="1"/><rect x="2" y="7" width="2" height="1"/><rect x="1" y="8" width="2" height="1"/><rect x="1" y="9" width="1" height="1"/></svg>
+          </div>
+          <div>
+            <span class="ach-unlocked">ACHIEVEMENT UNLOCKED</span>
+            <h3>Frame Hunter</h3>
+            <p>Pushed a simulation game to 2–2.5× its original frame rate.</p>
+          </div>
+        </button>
+        <button class="ach reveal d2" data-points="5">
+          <div class="ach-icon" aria-hidden="true">
+            <svg class="px" width="30" height="30" viewBox="0 0 10 10"><rect x="2" y="0" width="6" height="1" fill="#66c0f4"/><rect x="1" y="1" width="8" height="1" fill="#66c0f4"/><rect x="0" y="2" width="10" height="6" fill="#66c0f4"/><rect x="1" y="8" width="8" height="1" fill="#66c0f4"/><rect x="2" y="9" width="6" height="1" fill="#66c0f4"/><rect x="3" y="2" width="3" height="2" fill="#7dd88f"/><rect x="1" y="4" width="2" height="3" fill="#7dd88f"/><rect x="6" y="5" width="3" height="2" fill="#7dd88f"/></svg>
+          </div>
+          <div>
+            <span class="ach-unlocked">ACHIEVEMENT UNLOCKED</span>
+            <h3>Polyglot Build</h3>
+            <p>Managed localization pipelines across 10+ languages, twice.</p>
+          </div>
+        </button>
+        <button class="ach reveal" data-points="5">
+          <div class="ach-icon" aria-hidden="true">
+            <svg class="px" width="30" height="30" viewBox="0 0 10 10"><rect x="2" y="0" width="6" height="1" fill="#e5484d"/><rect x="1" y="1" width="2" height="1" fill="#e5484d"/><rect x="7" y="1" width="2" height="1" fill="#e5484d"/><rect x="0" y="2" width="1" height="4" fill="#e5484d"/><rect x="9" y="2" width="1" height="4" fill="#e5484d"/><rect x="3" y="2" width="4" height="1" fill="#fff"/><rect x="2" y="3" width="1" height="2" fill="#fff"/><rect x="7" y="3" width="1" height="2" fill="#fff"/><rect x="4" y="4" width="2" height="2" fill="#e5484d"/><rect x="3" y="6" width="4" height="1" fill="#fff"/><rect x="1" y="6" width="1" height="1" fill="#e5484d"/><rect x="8" y="6" width="1" height="1" fill="#e5484d"/><rect x="2" y="7" width="6" height="1" fill="#e5484d"/><rect x="3" y="8" width="4" height="1" fill="#e5484d"/><rect x="4" y="9" width="2" height="1" fill="#e5484d"/></svg>
+          </div>
+          <div>
+            <span class="ach-unlocked">ACHIEVEMENT UNLOCKED</span>
+            <h3>One of Seven</h3>
+            <p>Selected 1 of 7 from 200 students for KBU Game Experts.</p>
+          </div>
+        </button>
+        <button class="ach reveal d1" data-points="5">
+          <div class="ach-icon" aria-hidden="true">
+            <svg class="px" width="30" height="30" viewBox="0 0 10 10" fill="#7dd88f"><rect x="0" y="8" width="2" height="2"/><rect x="3" y="6" width="2" height="4"/><rect x="6" y="4" width="2" height="6"/><rect x="6" y="0" width="4" height="1"/><rect x="9" y="1" width="1" height="3"/><rect x="8" y="2" width="1" height="1"/><rect x="7" y="3" width="1" height="1"/></svg>
+          </div>
+          <div>
+            <span class="ach-unlocked">ACHIEVEMENT UNLOCKED</span>
+            <h3>Promotion Earned</h3>
+            <p>Part-time to full-time at Double Barrel for consistent delivery.</p>
+          </div>
+        </button>
+        <button class="ach reveal d2" data-points="5">
+          <div class="ach-icon" aria-hidden="true">
+            <svg class="px" width="30" height="24" viewBox="0 0 10 8"><rect x="0" y="2" width="10" height="1" fill="#ffb454"/><rect x="1" y="1" width="8" height="1" fill="#ffb454"/><rect x="3" y="0" width="4" height="1" fill="#ffb454"/><rect x="2" y="3" width="6" height="2" fill="#2a3342"/><rect x="8" y="3" width="1" height="4" fill="#ffb454"/><rect x="7" y="7" width="3" height="1" fill="#ffb454"/></svg>
+          </div>
+          <div>
+            <span class="ach-unlocked">ACHIEVEMENT UNLOCKED</span>
+            <h3>Degree Obtained</h3>
+            <p>B.Sc. Computer Engineering, Karabük University · 2020–2024.</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="quests">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">// Quest Log</div>
+        <h2 class="sec-title">Where I've Fought</h2>
+        <p class="sec-sub">The short version. The full playthrough, every quest included, is in <a href="Tarik_Ipekci_Game_Developer_CV.pdf" download>the CV</a>.</p>
+      </div>
+      <div class="xp">
+        <div class="xp-item active reveal">
+          <div class="xp-head"><h3>Hiraru Games <small>Game Developer</small></h3><span class="xp-when">Feb 2026 – Present · Remote</span></div>
+          <p class="xp-sum">Network-synchronized dynamic material systems, a collision-checked player decoration system, client-side VFX, and <strong>10+ language localization</strong>.</p>
+        </div>
+        <div class="xp-item reveal">
+          <div class="xp-head"><h3>Visma Games <small>Game Developer</small></h3><span class="xp-when">Mar 2025 – Sep 2025 · Remote</span></div>
+          <p class="xp-sum">Cleaning &amp; Tutorial systems in C++/Blueprint, Behavior Tree AI with custom nodes, save/load, and a <strong>2–2.5× frame-rate boost</strong> on a shipped simulation game.</p>
+        </div>
+        <div class="xp-item reveal">
+          <div class="xp-head"><h3>Double Barrel Games <small>Game Programmer</small></h3><span class="xp-when">Jun 2023 – Feb 2025 · Remote</span></div>
+          <p class="xp-sum"><strong>HELLBREAK's HUD and core UI</strong> from demo to post-release; promoted from part-time to full-time along the way.</p>
+        </div>
+        <div class="xp-item reveal">
+          <div class="xp-head"><h3>Tigloos Games <small>Game Programmer Intern</small></h3><span class="xp-when">Jul 2024 – Aug 2024</span></div>
+          <p class="xp-sum">Procedural-grid chessboard system and an RTS prototype with Behavior Tree AI, both in UE5.</p>
+        </div>
+        <div class="xp-item reveal">
+          <div class="xp-head"><h3>Veri Bilgi Merkezi <small>Software Engineer Intern</small></h3><span class="xp-when">Jul 2023 – Aug 2023</span></div>
+          <p class="xp-sum">RPA data-extraction tool with auto-login, dynamic scraping, and structured Excel export.</p>
+        </div>
+      </div>
+      <div class="xp-cta reveal">
+        <a class="btn btn-ghost" href="Tarik_Ipekci_Game_Developer_CV.pdf" download>
+          <svg width="13" height="14" viewBox="0 0 13 14" fill="none"><path d="M6.5 1v8m0 0L3 5.5M6.5 9L10 5.5M1 12.5h11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Full details — Download CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about-strip">
+        <div class="about-box reveal">
+          <h3>REMOTE-READY</h3>
+          <p>All three of my studio roles were <strong>fully remote with international teams</strong>. I'm in Istanbul (UTC+3) and available during CET/CEST office hours, so scheduling is painless.</p>
+        </div>
+        <div class="about-box reveal d1">
+          <h3>LANGUAGES (HUMAN ONES)</h3>
+          <p><strong>Turkish</strong> native · <strong>English</strong> professional · <strong>Japanese</strong> beginner — enough to read the menus in a JRPG, working on the rest.</p>
+        </div>
+        <div class="about-box reveal d2">
+          <h3>BEFORE THE STUDIOS</h3>
+          <p>Selected for <strong>KBU Game Experts</strong> at university and appointed <strong>lab assistant</strong> for programming courses — teaching pointers to sleepy sophomores builds character.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="press">— PRESS START —</div>
+        <h2>Ready When You Are</h2>
+        <p>I'm looking for a remote game development role with an international team. If you need someone who can take a feature from first prototype to post-launch patch, let's talk.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:ytarik.ipekci@gmail.com">ytarik.ipekci@gmail.com</a>
+          <a class="btn btn-ghost" href="Tarik_Ipekci_Game_Developer_CV.pdf" download>Download CV</a>
+          <a class="btn btn-ghost" href="https://github.com/tarikipekci" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/tarikipekci" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+
+        <div class="qblock-area">
+          <div class="qblock-wrap">
+            <div class="coin-fly" id="coinFly" aria-hidden="true">
+              <svg class="px" width="24" height="24" viewBox="0 0 8 8"><rect x="2" y="0" width="4" height="1" fill="#ffd75e"/><rect x="1" y="1" width="6" height="1" fill="#ffd75e"/><rect x="0" y="2" width="8" height="4" fill="#ffd75e"/><rect x="1" y="6" width="6" height="1" fill="#ffd75e"/><rect x="2" y="7" width="4" height="1" fill="#ffd75e"/><rect x="3" y="2" width="2" height="4" fill="#d9a520"/></svg>
+            </div>
+            <button class="qblock" id="qblock" aria-label="Question block — hit it for a coin">
+              <svg class="px" width="56" height="56" viewBox="0 0 12 12"><rect x="0" y="0" width="12" height="12" fill="#ffb454"/><rect x="0" y="0" width="12" height="1" fill="#ffd28a"/><rect x="0" y="0" width="1" height="12" fill="#ffd28a"/><rect x="11" y="0" width="1" height="12" fill="#b57a2e"/><rect x="0" y="11" width="12" height="1" fill="#b57a2e"/><rect x="1" y="1" width="1" height="1" fill="#181310"/><rect x="10" y="1" width="1" height="1" fill="#181310"/><rect x="1" y="10" width="1" height="1" fill="#181310"/><rect x="10" y="10" width="1" height="1" fill="#181310"/><rect x="4" y="3" width="4" height="1" fill="#181310"/><rect x="3" y="4" width="2" height="1" fill="#181310"/><rect x="7" y="4" width="2" height="1" fill="#181310"/><rect x="6" y="5" width="2" height="1" fill="#181310"/><rect x="5" y="6" width="2" height="1" fill="#181310"/><rect x="5" y="8" width="2" height="1" fill="#181310"/></svg>
+            </button>
+          </div>
+          <div class="qblock-label" id="coinCount">Coins: 0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="fox-track">
+    <button class="fox" id="fox" aria-label="Pixel fox from Fox's Tale — click to make it jump">
+      <svg class="px body" width="64" height="36" viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="0" width="1" height="2" fill="#e07b39"/>
+        <rect x="14" y="0" width="1" height="2" fill="#e07b39"/>
+        <rect x="12" y="1" width="1" height="1" fill="#fff"/>
+        <rect x="14" y="1" width="1" height="1" fill="#fff"/>
+        <rect x="11" y="2" width="5" height="2" fill="#e07b39"/>
+        <rect x="13" y="3" width="1" height="1" fill="#181310"/>
+        <rect x="15" y="3" width="1" height="1" fill="#181310"/>
+        <rect x="15" y="4" width="1" height="1" fill="#fff"/>
+        <rect x="4" y="3" width="8" height="3" fill="#e07b39"/>
+        <rect x="4" y="6" width="8" height="1" fill="#f2a76a"/>
+        <rect x="0" y="2" width="2" height="2" fill="#fff"/>
+        <rect x="1" y="3" width="3" height="2" fill="#e07b39"/>
+        <rect x="2" y="4" width="3" height="2" fill="#c9662d"/>
+        <rect x="5" y="7" width="1" height="2" fill="#c9662d"/>
+        <rect x="10" y="7" width="1" height="2" fill="#c9662d"/>
+        <rect x="7" y="7" width="1" height="1" fill="#c9662d"/>
+        <rect x="12" y="7" width="1" height="1" fill="#c9662d"/>
+      </svg>
+    </button>
+  </div>
+  <div class="wrap">
+    <span>© 2026 Yılmaz Tarık İpekçi</span>
+    <span>Istanbul → anywhere · no loading screens between us</span>
+  </div>
+</footer>
+
+<!-- achievement toast (shared, dynamic) -->
+<div class="toast" id="toast" role="status">
+  <div class="ach-icon" aria-hidden="true">
+    <svg class="px" width="26" height="26" viewBox="0 0 10 10" fill="#ffb454"><rect x="1" y="1" width="8" height="1"/><rect x="0" y="2" width="1" height="2"/><rect x="9" y="2" width="1" height="2"/><rect x="1" y="2" width="8" height="3"/><rect x="2" y="5" width="6" height="1"/><rect x="3" y="6" width="4" height="1"/><rect x="4" y="7" width="2" height="1"/><rect x="3" y="8" width="4" height="1"/><rect x="2" y="9" width="6" height="1"/></svg>
+  </div>
+  <div>
+    <span class="ach-unlocked" id="toastPts">ACHIEVEMENT UNLOCKED</span>
+    <h4 id="toastTitle"></h4>
+    <p id="toastDesc"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var score = 0;
+  var scoreEl = document.getElementById('score');
+
+  function pad(n){ return String(n).padStart(6,'0'); }
+
+  function addScore(points, x, y){
+    score += points;
+    scoreEl.textContent = 'SCORE ' + pad(score);
+    scoreEl.classList.remove('bump');
+    void scoreEl.offsetWidth;
+    scoreEl.classList.add('bump');
+    if (x !== undefined){
+      var pop = document.createElement('div');
+      pop.className = 'score-pop';
+      pop.textContent = '+' + points;
+      pop.style.left = x + 'px';
+      pop.style.top = y + 'px';
+      document.body.appendChild(pop);
+      setTimeout(function(){ pop.remove(); }, 850);
+    }
+  }
+
+  /* ---- toast system (queued, reusable) ---- */
+  var toast = document.getElementById('toast');
+  var toastTitle = document.getElementById('toastTitle');
+  var toastDesc = document.getElementById('toastDesc');
+  var toastPts = document.getElementById('toastPts');
+  var toastQueue = [];
+  var toastBusy = false;
+
+  function showToast(title, desc, points){
+    toastQueue.push({title:title, desc:desc, points:points});
+    if (!toastBusy) nextToast();
+  }
+  function nextToast(){
+    if (!toastQueue.length){ toastBusy = false; return; }
+    toastBusy = true;
+    var t = toastQueue.shift();
+    toastTitle.textContent = t.title;
+    toastDesc.textContent = t.desc;
+    toastPts.textContent = 'ACHIEVEMENT UNLOCKED · +' + t.points;
+    addScore(t.points);
+    toast.classList.add('show');
+    setTimeout(function(){
+      toast.classList.remove('show');
+      setTimeout(nextToast, 600);
+    }, 3800);
+  }
+
+  /* mobile menu */
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* scroll reveal */
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+
+  /* nav active highlighting */
+  var navMap = {};
+  document.querySelectorAll('.nav-links a').forEach(function(a){ navMap[a.dataset.nav] = a; });
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        Object.values(navMap).forEach(function(a){ a.classList.remove('here'); });
+        var link = navMap[e.target.id];
+        if (link) link.classList.add('here');
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  ['games','projects','loadout','quests','contact'].forEach(function(id){
+    var s = document.getElementById(id);
+    if (s) secObs.observe(s);
+  });
+
+  /* count-up stats */
+  function countUp(el){
+    var target = parseInt(el.dataset.count,10);
+    var suffix = el.dataset.suffix || '';
+    var dur = 900, start = null;
+    function step(t){
+      if (!start) start = t;
+      var p = Math.min((t - start)/dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1-p,3))) + (p === 1 ? suffix : '');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var statObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.querySelectorAll('b[data-count]').forEach(countUp);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:.4});
+  var statsEl = document.querySelector('.stats');
+  if (statsEl) statObs.observe(statsEl);
+
+  /* clickable sprites + First Blood toast */
+  var firstBlood = false;
+  var kills = 0;
+  var waveCleared = false;
+  document.querySelectorAll('.sprite').forEach(function(sp){
+    sp.addEventListener('click', function(e){
+      if (sp.classList.contains('hit')) return;
+      addScore(parseInt(sp.dataset.points,10), e.clientX, e.clientY - 20);
+      kills++;
+      if (!firstBlood){
+        firstBlood = true;
+        showToast('First Blood', 'You clicked your first enemy. The wave has noticed.', 20);
+      } else if (kills >= 10 && !waveCleared){
+        waveCleared = true;
+        showToast('Wave Cleared', '10 enemies down. You\'d survive my zombie game.', 40);
+      }
+      sp.classList.add('hit');
+      setTimeout(function(){
+        sp.classList.remove('hit');
+        sp.classList.add('respawn');
+        setTimeout(function(){ sp.classList.remove('respawn'); }, 450);
+      }, 1600);
+    });
+  });
+
+  /* achievements pop */
+  document.querySelectorAll('.ach').forEach(function(a){
+    a.addEventListener('click', function(e){
+      addScore(parseInt(a.dataset.points,10), e.clientX, e.clientY - 20);
+      a.classList.remove('pop');
+      void a.offsetWidth;
+      a.classList.add('pop');
+    });
+  });
+
+  /* question block + Coin Collector toast */
+  var coins = 0;
+  var coinToastShown = false;
+  var qblock = document.getElementById('qblock');
+  var coinFly = document.getElementById('coinFly');
+  var coinCount = document.getElementById('coinCount');
+  qblock.addEventListener('click', function(e){
+    coins++;
+    coinCount.textContent = 'Coins: ' + coins;
+    addScore(10, e.clientX, e.clientY - 30);
+    qblock.classList.remove('bounce');
+    coinFly.classList.remove('go');
+    void qblock.offsetWidth;
+    qblock.classList.add('bounce');
+    coinFly.classList.add('go');
+    if (coins === 10 && !coinToastShown){
+      coinToastShown = true;
+      coinCount.textContent = 'Coins: 10 — okay, you can just email me';
+      showToast('Coin Collector', 'Ten coins from one block. The economy thanks you.', 30);
+    }
+  });
+
+  /* fox jump */
+  var fox = document.getElementById('fox');
+  fox.addEventListener('click', function(e){
+    addScore(15, e.clientX, e.clientY - 30);
+    fox.classList.remove('jump');
+    void fox.offsetWidth;
+    fox.classList.add('jump');
+    setTimeout(function(){ fox.classList.remove('jump'); }, 520);
+  });
+
+  /* completionist toast when reaching contact */
+  var toastShown = false;
+  var toastObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting && !toastShown){
+        toastShown = true;
+        showToast('Completionist', 'You read the whole page. Recruiters love that.', 50);
+        toastObs.disconnect();
+      }
+    });
+  }, {threshold:.5});
+  var contactSec = document.getElementById('contact');
+  if (contactSec) toastObs.observe(contactSec);
+})();
+</script>
+
+</body>
+</html>
