@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarık İpekçi — Game Developer · Unity & Unreal Engine 5</title>
-<meta name="description" content="Game developer from Istanbul with 3+ years across five studios. Shipped HELLBREAK on Steam. Unity & Unreal Engine 5, multiplayer, AI, and performance optimization. Open to remote roles.">
+<meta name="description" content="Game developer from Istanbul with 3 years across five studios. Shipped HELLBREAK and 2 more titles on Steam. Unity & Unreal Engine 5, multiplayer, AI, and performance optimization. Open to on-site (Istanbul) or remote roles.">
 <meta property="og:title" content="Tarık İpekçi — Game Developer">
-<meta property="og:description" content="3+ years, five studios, one shipped Steam title and another on the way. Unity & UE5 developer open to remote roles worldwide.">
+<meta property="og:description" content="3 years, five studios, three shipped Steam titles and one more on the way. Unity & UE5 developer open to on-site (Istanbul) or remote roles.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.tarikipekci.com/">
 <link rel="canonical" href="https://www.tarikipekci.com/">
@@ -277,6 +277,37 @@
   .plink:hover{border-bottom-color:var(--accent)}
   .plink.dim{color:var(--muted);cursor:default}
 
+  .capsule{
+    width:100%;max-width:300px;aspect-ratio:616/353;object-fit:cover;border-radius:5px;
+    border:1px solid var(--line);margin:0;display:block;
+    background:var(--panel-2);
+  }
+  .media-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .media-row .capsule{flex:1 1 260px}
+  .trailer-frame{
+    flex:1 1 260px;max-width:300px;aspect-ratio:16/9;border-radius:5px;
+    overflow:hidden;border:1px solid var(--line);background:#000;
+  }
+  .trailer-frame iframe{width:100%;height:100%;display:block;border:0}
+  @media (max-width:480px){
+    .media-row .capsule,.trailer-frame{max-width:none;flex-basis:100%}
+  }
+  .capsule-sm{
+    width:100%;aspect-ratio:460/215;object-fit:cover;border-radius:4px;
+    border:1px solid var(--line);margin-top:10px;display:block;
+    background:var(--panel-2);
+  }
+  .xp-media{display:flex;gap:16px;align-items:flex-start}
+  .xp-media .xp-body{flex:1;min-width:0}
+  .xp-media img{
+    width:120px;height:56px;object-fit:cover;border-radius:4px;
+    border:1px solid var(--line);flex-shrink:0;background:var(--panel-2);
+  }
+  @media (max-width:560px){
+    .xp-media{flex-direction:column}
+    .xp-media img{width:100%;height:auto;aspect-ratio:616/353}
+  }
+
   .classified{
     background:
       repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,180,84,.035) 22px 44px),
@@ -468,6 +499,7 @@
       <li><a href="#projects" data-nav="projects">Side Quests</a></li>
       <li><a href="#loadout" data-nav="loadout">Loadout</a></li>
       <li><a href="#quests" data-nav="quests">Quest Log</a></li>
+      <li><a href="about.html">About Me</a></li>
       <li><a href="#contact" data-nav="contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -482,6 +514,7 @@
     <a href="#projects">Side Quests</a>
     <a href="#loadout">Loadout</a>
     <a href="#quests">Quest Log</a>
+    <a href="about.html">About Me</a>
     <a href="#contact">Contact</a>
     <a href="Tarik_Ipekci_Game_Developer_CV.pdf" download>Download CV (PDF)</a>
   </nav>
@@ -539,7 +572,7 @@
     <div class="wrap">
       <div class="eyebrow">GAME DEVELOPER · UNITY &amp; UNREAL ENGINE 5</div>
       <h1>I build the systems that make games <span class="amp">fun</span>.</h1>
-      <p>I'm Tarık, a game developer based in Istanbul. Over the past three years I've worked with <strong>five studios</strong>, mostly on remote international teams. My code is live in <a href="https://store.steampowered.com/app/3043760/HELLBREAK/" target="_blank" rel="noopener">HELLBREAK</a>, a roguelite arena shooter on Steam, and my next game is headed there too. Most days you'll find me deep in the stuff players feel but never see: multiplayer sync, enemy AI, save systems, frame budgets.</p>
+      <p>I'm Tarık, a game developer based in Istanbul. Over the past three years I've worked with <strong>five studios</strong>, most of it remote. My code is live in <a href="https://store.steampowered.com/app/3043760/HELLBREAK/" target="_blank" rel="noopener">HELLBREAK</a>, a roguelite arena shooter on Steam, and my next game is headed there too. Most days you'll find me deep in the stuff players feel but never see: multiplayer sync, enemy AI, save systems, frame budgets.</p>
 
       <div class="hud" role="note" aria-label="Quick facts">
         <span class="c3" aria-hidden="true"></span>
@@ -552,8 +585,8 @@
         </div>
         <div class="hud-row"><span class="hud-key">ENGINES</span><span class="hud-val">Unity (C#) · UE5 (C++/Blueprint)</span></div>
         <div class="hud-row"><span class="hud-key">LOCATION</span><span class="hud-val">Istanbul · UTC+3 · CET-friendly</span></div>
-        <div class="hud-row"><span class="hud-key">SHIPPED</span><span class="hud-val">HELLBREAK (Steam)</span></div>
-        <div class="hud-row"><span class="hud-key">STATUS</span><span class="hud-val ok">OPEN TO REMOTE ROLES<span class="blink">_</span></span></div>
+        <div class="hud-row"><span class="hud-key">SHIPPED</span><span class="hud-val">HELLBREAK + 2 more (Steam)</span></div>
+        <div class="hud-row"><span class="hud-key">STATUS</span><span class="hud-val ok">AVAILABLE NOW · ISTANBUL ON-SITE OR REMOTE<span class="blink">_</span></span></div>
       </div>
 
       <div class="hero-actions">
@@ -566,10 +599,10 @@
       </div>
 
       <div class="stats reveal" aria-label="Career stats">
-        <div class="stat"><b data-count="3" data-suffix="+">0</b><span>YEARS EXP</span></div>
-        <div class="stat"><b data-count="5">0</b><span>STUDIOS</span></div>
-        <div class="stat"><b data-count="1" data-suffix=" + 1">0</b><span>STEAM TITLES</span></div>
-        <div class="stat"><b data-count="10" data-suffix="+">0</b><span>LOCALIZED LANGS</span></div>
+        <div class="stat"><b data-count="3" data-suffix="">0</b><span>YEARS EXP</span></div>
+        <div class="stat"><b data-count="5" data-suffix="">0</b><span>STUDIOS</span></div>
+        <div class="stat"><b data-count="3" data-suffix=" + 1">0</b><span>STEAM TITLES</span></div>
+        <div class="stat"><b data-count="2" data-suffix=".5×">0</b><span>FRAME RATE BOOST</span></div>
       </div>
     </div>
   </section>
@@ -582,7 +615,13 @@
       </div>
 
       <article class="featured reveal">
-        <span class="badge steam">RELEASED ON STEAM · VERY POSITIVE</span>
+        <span class="badge steam">RELEASED ON STEAM</span>
+        <div class="media-row">
+          <img class="capsule" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3043760/661b08190a6220f6d39aee7b1280310ea98be3ab/capsule_616x353.jpg?t=1786032619" alt="HELLBREAK Steam capsule art" loading="lazy">
+          <div class="trailer-frame">
+            <iframe src="https://www.youtube.com/embed/b3BuVdaF8V8" title="HELLBREAK — Official 1.0 Launch Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
         <h3>HELLBREAK</h3>
         <div class="subtitle">Roguelite arena FPS · Double Barrel Games</div>
         <p>A fast-paced roguelite arena FPS where you fight through the arenas of Hell to win back your soul. I started at Double Barrel Games part-time, was <strong>promoted to full-time</strong>, and stayed on from the first demo through Early Access, the 1.0 launch and post-release support. The <strong>HUD and core UI are mine</strong>, written in C++ and Blueprint: off-screen enemy direction indicators, the health bar, the souls counter, the skill cooldown system. And when an enemy moved wrong or an ability misfired, that bug landed on my desk.</p>
@@ -593,6 +632,42 @@
           <span class="tag">Demo → 1.0 → Post-release</span>
         </div>
         <a class="plink" href="https://store.steampowered.com/app/3043760/HELLBREAK/" target="_blank" rel="noopener">View on Steam →</a>
+      </article>
+
+      <article class="featured reveal">
+        <span class="badge steam">STEAM EARLY ACCESS</span>
+        <div class="media-row">
+          <img class="capsule" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3874220/77e4a7570b2bd8896b48360cbc48e7e9fcf4734f/capsule_616x353.jpg?t=1773961284" alt="Zoo Life Simulator Steam capsule art" loading="lazy">
+          <div class="trailer-frame">
+            <iframe src="https://www.youtube.com/embed/K6AOU8Qkd2U" title="Zoo Life Simulator — Official Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <h3>Zoo Life Simulator</h3>
+        <div class="subtitle">Co-op zoo management sim · Hiraru Games</div>
+        <p>Built at Hiraru Games: the network-synchronized dynamic material system that makes enclosures get progressively dirtier and stay in sync for every player, plus a collision-checked decoration system and the client-side VFX for this co-op zoo management sim.</p>
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">Netcode</span>
+          <span class="tag">Dynamic Materials</span>
+        </div>
+      </article>
+
+      <article class="featured reveal">
+        <span class="badge steam">STEAM EARLY ACCESS</span>
+        <div class="media-row">
+          <img class="capsule" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3390160/14020b037d13de42c74c93ee86668739dcea8cf8/capsule_616x353.jpg?t=1756466347" alt="The Pub Life Simulator Steam capsule art" loading="lazy">
+          <div class="trailer-frame">
+            <iframe src="https://www.youtube.com/embed/vMzLbMgjxOs" title="The Pub Life Simulator — Official Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <h3>The Pub Life Simulator</h3>
+        <div class="subtitle">Pub management sim · Visma Games</div>
+        <p>Built the Cleaning and Tutorial systems in a hybrid C++/Blueprint pipeline, Behavior Tree AI with custom nodes, and pushed the frame rate up 2–2.5× through tick, collision and LOD work for this pub management sim.</p>
+        <div class="tags">
+          <span class="tag">C++ / Blueprint</span>
+          <span class="tag">Behavior Trees</span>
+          <span class="tag">Performance</span>
+        </div>
       </article>
 
       <article class="featured classified reveal">
@@ -693,7 +768,7 @@
           <h3>ENGINES &amp; LANGUAGES</h3>
           <ul>
             <li><strong>Unreal Engine 5</strong> — C++ &amp; Blueprint</li>
-            <li><strong>Unity</strong> — C#</li>
+            <li><strong>Unity</strong> — C#, Unity 6</li>
             <li>Java, C</li>
           </ul>
         </div>
@@ -710,7 +785,7 @@
           <ul>
             <li><strong>Netcode for GameObjects</strong></li>
             <li><strong>Steam OSS</strong>, state sync</li>
-            <li>Behavior Trees, custom nodes</li>
+            <li>Behavior Trees, <strong>Gameplay Ability System (GAS)</strong></li>
           </ul>
         </div>
         <div class="skill-box reveal d3">
@@ -822,24 +897,43 @@
         <p class="sec-sub">The short version. The full playthrough, every quest included, is in <a href="Tarik_Ipekci_Game_Developer_CV.pdf" download>the CV</a>.</p>
       </div>
       <div class="xp">
-        <div class="xp-item active reveal">
-          <div class="xp-head"><h3>Hiraru Games <small>Game Developer</small></h3><span class="xp-when">Feb 2026 – Present · Remote</span></div>
-          <p class="xp-sum">Network-synchronized dynamic material systems, a collision-checked player decoration system, client-side VFX, and <strong>10+ language localization</strong>.</p>
+        <div class="xp-item reveal">
+          <div class="xp-media">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3874220/c03fd260ec97c4c3968f3c7176ddd5c679e2f757/header.jpg?t=1773961284" alt="Zoo Life Simulator capsule art" loading="lazy">
+            <div class="xp-body">
+              <div class="xp-head"><h3>Hiraru Games <small>Game Developer</small></h3><span class="xp-when">Feb 2026 – Apr 2026 · Remote</span></div>
+              <p class="xp-sum">Network-synchronized dynamic material systems, a collision-checked player decoration system, and client-side VFX on <strong>Zoo Life Simulator</strong>.</p>
+            </div>
+          </div>
         </div>
         <div class="xp-item reveal">
-          <div class="xp-head"><h3>Visma Games <small>Game Developer</small></h3><span class="xp-when">Mar 2025 – Sep 2025 · Remote</span></div>
-          <p class="xp-sum">Cleaning &amp; Tutorial systems in C++/Blueprint, Behavior Tree AI with custom nodes, save/load, and a <strong>2–2.5× frame-rate boost</strong> on a shipped simulation game.</p>
+          <div class="xp-head"><h3>Independent <small>Mobile Game Developer · Unity</small></h3><span class="xp-when">Sep 2025 – Jan 2026 · Istanbul</span></div>
+          <p class="xp-sum">A stretch between studio roles spent building mobile games solo in Unity (C#), full-time — concept through core mechanics through polish.</p>
         </div>
         <div class="xp-item reveal">
-          <div class="xp-head"><h3>Double Barrel Games <small>Game Programmer</small></h3><span class="xp-when">Jun 2023 – Feb 2025 · Remote</span></div>
-          <p class="xp-sum"><strong>HELLBREAK's HUD and core UI</strong> from demo to post-release; promoted from part-time to full-time along the way.</p>
+          <div class="xp-media">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3390160/f078552deb7362733262b620f3649940763ed2a6/header.jpg?t=1756466347" alt="The Pub Life Simulator capsule art" loading="lazy">
+            <div class="xp-body">
+              <div class="xp-head"><h3>Visma Games <small>Game Developer</small></h3><span class="xp-when">Mar 2025 – Sep 2025 · Remote</span></div>
+              <p class="xp-sum">Cleaning &amp; Tutorial systems in C++/Blueprint, Behavior Tree AI with custom nodes, save/load, and a <strong>2–2.5× frame-rate boost</strong> on <strong>The Pub Life Simulator</strong>.</p>
+            </div>
+          </div>
         </div>
         <div class="xp-item reveal">
-          <div class="xp-head"><h3>Tigloos Games <small>Game Programmer Intern</small></h3><span class="xp-when">Jul 2024 – Aug 2024</span></div>
+          <div class="xp-media">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3043760/header.jpg?t=1786032619" alt="HELLBREAK capsule art" loading="lazy">
+            <div class="xp-body">
+              <div class="xp-head"><h3>Double Barrel Games <small>Game Programmer</small></h3><span class="xp-when">Jun 2023 – Feb 2025 · Istanbul</span></div>
+              <p class="xp-sum"><strong>HELLBREAK's HUD and core UI</strong> from demo to post-release; promoted from part-time to full-time along the way.</p>
+            </div>
+          </div>
+        </div>
+        <div class="xp-item reveal">
+          <div class="xp-head"><h3>Tigloos Games <small>Game Programmer Intern</small></h3><span class="xp-when">Jul 2024 – Aug 2024 · Istanbul</span></div>
           <p class="xp-sum">Procedural-grid chessboard system and an RTS prototype with Behavior Tree AI, both in UE5.</p>
         </div>
         <div class="xp-item reveal">
-          <div class="xp-head"><h3>Veri Bilgi Merkezi <small>Software Engineer Intern</small></h3><span class="xp-when">Jul 2023 – Aug 2023</span></div>
+          <div class="xp-head"><h3>Veri Bilgi Merkezi <small>Software Engineer Intern</small></h3><span class="xp-when">Jul 2023 – Aug 2023 · Istanbul</span></div>
           <p class="xp-sum">RPA data-extraction tool with auto-login, dynamic scraping, and structured Excel export.</p>
         </div>
       </div>
@@ -857,7 +951,7 @@
       <div class="about-strip">
         <div class="about-box reveal">
           <h3>REMOTE-READY</h3>
-          <p>All three of my studio roles were <strong>fully remote with international teams</strong>. I'm in Istanbul (UTC+3) and available during CET/CEST office hours, so scheduling is painless.</p>
+          <p>Most of my studio roles have been <strong>fully remote</strong>. I'm in Istanbul (UTC+3) and available during CET/CEST office hours, so scheduling is painless.</p>
         </div>
         <div class="about-box reveal d1">
           <h3>LANGUAGES (HUMAN ONES)</h3>
@@ -866,6 +960,10 @@
         <div class="about-box reveal d2">
           <h3>BEFORE THE STUDIOS</h3>
           <p>Selected for <strong>KBU Game Experts</strong> at university and appointed <strong>lab assistant</strong> for programming courses — teaching pointers to sleepy sophomores builds character.</p>
+        </div>
+        <div class="about-box reveal d3">
+          <h3>WANT THE LONGER VERSION?</h3>
+          <p>Games, travel, figures, and whatever else I'm into outside of work — <a href="about.html">the full About Me page →</a></p>
         </div>
       </div>
     </div>
@@ -876,7 +974,7 @@
       <div class="contact reveal">
         <div class="press">— PRESS START —</div>
         <h2>Ready When You Are</h2>
-        <p>I'm looking for a remote game development role with an international team. If you need someone who can take a feature from first prototype to post-launch patch, let's talk.</p>
+        <p>I'm looking for a game development role — on-site here in Istanbul or remote. If you need someone who can take a feature from first prototype to post-launch patch, let's talk.</p>
         <div class="contact-links">
           <a class="btn btn-primary" href="mailto:ytarik.ipekci@gmail.com">ytarik.ipekci@gmail.com</a>
           <a class="btn btn-ghost" href="Tarik_Ipekci_Game_Developer_CV.pdf" download>Download CV</a>
