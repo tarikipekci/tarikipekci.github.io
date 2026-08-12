@@ -16,14 +16,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#181310;
-    --panel:#201914;
-    --panel-2:#1b1510;
-    --line:#3a2d1d;
-    --text:#f2ece2;
-    --muted:#a89a87;
-    --accent:#ffb454;
-    --accent-dim:rgba(255,180,84,.14);
+    --bg:#0F1115;
+    --panel:#1A1D24;
+    --panel-2:#14161c;
+    --line:#2A2F38;
+    --text:#F5F5F5;
+    --muted:#B8BDC7;
+    --accent:#8b5cf6;
+    --accent-dim:rgba(139,92,246,.16);
     --ok:#7dd88f;
     --steam:#66c0f4;
     --danger:#e5484d;
@@ -47,7 +47,7 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  ::selection{background:var(--accent);color:#181310}
+  ::selection{background:var(--accent);color:#0F1115}
   a{color:inherit}
   a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
@@ -63,7 +63,7 @@
   /* ---------- header ---------- */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(24,19,16,.9);
+    background:rgba(15,17,21,.9);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -114,7 +114,7 @@
   .ahero p + p{margin-top:14px}
   .back-link{
     display:inline-block;margin-top:24px;font-family:var(--mono);font-size:13px;
-    color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(255,180,84,.35);
+    color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(139,92,246,.4);
   }
   .back-link:hover{border-bottom-color:var(--accent)}
 
@@ -151,13 +151,6 @@
   }
   .reel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
   .reel figure:hover img{transform:scale(1.06)}
-  .reel figcaption{
-    position:absolute;left:0;right:0;bottom:0;padding:8px 10px 7px;
-    font-family:var(--mono);font-size:11.5px;color:#fff;letter-spacing:.03em;
-    background:linear-gradient(0deg,rgba(0,0,0,.75),transparent);
-    opacity:0;transition:opacity .2s;
-  }
-  .reel figure:hover figcaption{opacity:1}
   @media (max-width:640px){
     .reel figure{width:190px;height:140px}
   }
@@ -168,16 +161,12 @@
 
   /* ---------- lightbox ---------- */
   .lightbox{
-    position:fixed;inset:0;background:rgba(10,8,6,.92);z-index:100;
+    position:fixed;inset:0;background:rgba(6,7,9,.92);z-index:100;
     display:none;align-items:center;justify-content:center;padding:24px;
     backdrop-filter:blur(4px);
   }
   .lightbox.open{display:flex}
   .lightbox img{max-width:92vw;max-height:86vh;border-radius:6px;border:1px solid var(--line)}
-  .lightbox-caption{
-    position:absolute;bottom:18px;left:0;right:0;text-align:center;
-    font-family:var(--mono);font-size:13px;color:var(--muted);
-  }
   .lightbox-close{
     position:absolute;top:18px;right:24px;background:none;border:1px solid var(--line);
     color:var(--text);border-radius:4px;padding:8px 12px;cursor:pointer;font-family:var(--mono);
@@ -189,17 +178,17 @@
   footer{border-top:1px solid var(--line);padding:20px 0 26px;position:relative;overflow:hidden}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
     font-family:var(--mono);font-size:12px;color:var(--muted)}
-  .fox-track{position:relative;height:0}
-  .fox{
+  .zombie-track{position:relative;height:0}
+  .zombie-walker{
     position:absolute;left:-70px;top:-58px;background:none;border:none;cursor:pointer;
-    animation:foxrun 16s linear infinite;padding:0;
+    animation:zombierun 18s linear infinite;padding:0;
   }
-  @keyframes foxrun{0%{left:-70px}100%{left:100%}}
-  .fox .body{animation:foxbob .3s steps(2) infinite}
-  @keyframes foxbob{50%{translate:0 -3px}}
-  .fox.jump .body{animation:foxjump .5s ease}
-  @keyframes foxjump{50%{translate:0 -26px}}
-  @media (prefers-reduced-motion:reduce){.fox{left:24px;animation:none}}
+  @keyframes zombierun{0%{left:-70px}100%{left:100%}}
+  .zombie-walker .body{animation:zombiebob .4s steps(2) infinite}
+  @keyframes zombiebob{50%{translate:0 -2px}}
+  .zombie-walker.jump .body{animation:zombiejump .5s ease}
+  @keyframes zombiejump{50%{translate:0 -22px}}
+  @media (prefers-reduced-motion:reduce){.zombie-walker{left:24px;animation:none}}
 
   @media (max-width:640px){
     .ahero{padding:44px 0 28px}
@@ -216,8 +205,8 @@
       <li><a href="index.html#projects">Side Quests</a></li>
       <li><a href="index.html#loadout">Loadout</a></li>
       <li><a href="index.html#quests">Quest Log</a></li>
-      <li><a href="about.html" class="here">About Me</a></li>
       <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="about.html" class="here">About Me</a></li>
     </ul>
     <div class="nav-right">
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
@@ -230,8 +219,8 @@
     <a href="index.html#projects">Side Quests</a>
     <a href="index.html#loadout">Loadout</a>
     <a href="index.html#quests">Quest Log</a>
-    <a href="about.html">About Me</a>
     <a href="index.html#contact">Contact</a>
+    <a href="about.html">About Me</a>
   </nav>
 </header>
 
@@ -279,32 +268,29 @@
       <div class="reel-wrap reveal">
         <div class="reel rev" id="reel2"></div>
       </div>
+      <div class="reel-wrap reveal">
+        <div class="reel" id="reel3"></div>
+      </div>
       <div class="more-soon reveal">More photos land here soon — this log is still being written.</div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="fox-track">
-    <button class="fox" id="fox" aria-label="Pixel fox from Fox's Tale — click to make it jump">
-      <svg class="px body" width="64" height="36" viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg">
-        <rect x="12" y="0" width="1" height="2" fill="#e07b39"/>
-        <rect x="14" y="0" width="1" height="2" fill="#e07b39"/>
-        <rect x="12" y="1" width="1" height="1" fill="#fff"/>
-        <rect x="14" y="1" width="1" height="1" fill="#fff"/>
-        <rect x="11" y="2" width="5" height="2" fill="#e07b39"/>
-        <rect x="13" y="3" width="1" height="1" fill="#181310"/>
-        <rect x="15" y="3" width="1" height="1" fill="#181310"/>
-        <rect x="15" y="4" width="1" height="1" fill="#fff"/>
-        <rect x="4" y="3" width="8" height="3" fill="#e07b39"/>
-        <rect x="4" y="6" width="8" height="1" fill="#f2a76a"/>
-        <rect x="0" y="2" width="2" height="2" fill="#fff"/>
-        <rect x="1" y="3" width="3" height="2" fill="#e07b39"/>
-        <rect x="2" y="4" width="3" height="2" fill="#c9662d"/>
-        <rect x="5" y="7" width="1" height="2" fill="#c9662d"/>
-        <rect x="10" y="7" width="1" height="2" fill="#c9662d"/>
-        <rect x="7" y="7" width="1" height="1" fill="#c9662d"/>
-        <rect x="12" y="7" width="1" height="1" fill="#c9662d"/>
+  <div class="zombie-track">
+    <button class="zombie-walker" id="zombieWalker" aria-label="Pixel zombie lurching across the footer — click to make it lunge">
+      <svg class="px body" width="56" height="36" viewBox="0 0 14 9" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="0" width="3" height="1" fill="#3e7a4a"/>
+        <rect x="1" y="1" width="4" height="1" fill="#57a868"/>
+        <rect x="1" y="2" width="1" height="1" fill="#57a868"/><rect x="2" y="2" width="1" height="1" fill="#d33"/><rect x="3" y="2" width="1" height="1" fill="#6fc482"/><rect x="4" y="2" width="1" height="1" fill="#d33"/>
+        <rect x="1" y="3" width="4" height="1" fill="#6fc482"/>
+        <rect x="0" y="4" width="7" height="2" fill="#5c6247"/>
+        <rect x="7" y="4" width="2" height="1" fill="#6fc482"/>
+        <rect x="1" y="6" width="4" height="1" fill="#4a4f3a"/>
+        <rect x="1" y="7" width="2" height="2" fill="#3a3f2e"/>
+        <rect x="3" y="7" width="2" height="2" fill="#3a3f2e"/>
+        <rect x="0" y="8" width="2" height="1" fill="#2c3024"/>
+        <rect x="4" y="8" width="2" height="1" fill="#2c3024"/>
       </svg>
     </button>
   </div>
@@ -317,32 +303,51 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">CLOSE ✕</button>
   <img id="lightboxImg" src="" alt="">
-  <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
 <script>
 (function(){
   var PHOTOS = [
-    {src:"assets/about/photo-01.jpg", alt:"Two kittens outside", cap:"Neighborhood cats"},
-    {src:"assets/about/photo-02.jpg", alt:"Portrait with a city skyline", cap:"Oslo, Norway"},
-    {src:"assets/about/photo-03.jpg", alt:"In front of Anıtkabir", cap:"Ankara"},
-    {src:"assets/about/photo-04.jpg", alt:"In front of Topkapı Palace gate", cap:"Topkapı Palace, Istanbul"},
-    {src:"assets/about/photo-05.jpg", alt:"Rooftop view of a European city", cap:"Copenhagen"},
-    {src:"assets/about/photo-06.jpg", alt:"Selfie above a city with a lake", cap:"Copenhagen"},
-    {src:"assets/about/photo-07.jpg", alt:"Standing near the Eiffel Tower", cap:"Paris"},
-    {src:"assets/about/photo-08.jpg", alt:"Wearing a Mario hat in a shop", cap:"Nintendo store, Japan"},
-    {src:"assets/about/photo-09.jpg", alt:"Holding a small hamster", cap:"Say hi to the office hamster"},
-    {src:"assets/about/photo-10.jpg", alt:"Selfie with a deer", cap:"Nara, Japan"},
-    {src:"assets/about/photo-11.jpg", alt:"Standing in front of a Mario-themed park area", cap:"Universal Studios Japan"},
-    {src:"assets/about/photo-12.jpg", alt:"Sitting on a hotel bed holding chopsticks", cap:"Hotel night, Japan"},
-    {src:"assets/about/photo-13.jpg", alt:"Standing by a canal with neon signs", cap:"Dotonbori, Osaka"},
-    {src:"assets/about/photo-14.jpg", alt:"Holding food with chopsticks at a market", cap:"Kuromon Market, Osaka"},
-    {src:"assets/about/photo-15.jpg", alt:"Seafood display at a market", cap:"Kuromon Market, Osaka"},
-    {src:"assets/about/photo-16.jpg", alt:"Wearing a duck-shaped hat in a shop", cap:"Novelty shop, Japan"},
-    {src:"assets/about/photo-17.jpg", alt:"Shelves of anime figures", cap:"Figure hunting, Japan"},
-    {src:"assets/about/photo-18.jpg", alt:"Cliffside view of a blue coastline", cap:"Black Sea coast, Bulgaria"},
-    {src:"assets/about/photo-19.jpg", alt:"Office lounge with an astronaut mural", cap:"At the office"},
-    {src:"assets/about/photo-20.jpg", alt:"Selfie at a zoo with a hippo in the background", cap:"Zoo day"}
+    {src:"assets/about/photo-01.jpg", alt:"Two kittens outside"},
+    {src:"assets/about/photo-02.jpg", alt:"Portrait with a city skyline"},
+    {src:"assets/about/photo-03.jpg", alt:"In front of Anıtkabir"},
+    {src:"assets/about/photo-04.jpg", alt:"In front of Topkapı Palace gate"},
+    {src:"assets/about/photo-05.jpg", alt:"Rooftop view of a European city"},
+    {src:"assets/about/photo-06.jpg", alt:"Selfie above a city with a lake"},
+    {src:"assets/about/photo-07.jpg", alt:"Standing near the Eiffel Tower"},
+    {src:"assets/about/photo-08.jpg", alt:"Wearing a Mario hat in a shop"},
+    {src:"assets/about/photo-09.jpg", alt:"Holding a small hamster"},
+    {src:"assets/about/photo-10.jpg", alt:"Selfie with a deer"},
+    {src:"assets/about/photo-11.jpg", alt:"Standing in front of a Mario-themed park area"},
+    {src:"assets/about/photo-12.jpg", alt:"Sitting on a hotel bed holding chopsticks"},
+    {src:"assets/about/photo-13.jpg", alt:"Standing by a canal with neon signs"},
+    {src:"assets/about/photo-14.jpg", alt:"Holding food with chopsticks at a market"},
+    {src:"assets/about/photo-15.jpg", alt:"Seafood display at a market"},
+    {src:"assets/about/photo-16.jpg", alt:"Wearing a duck-shaped hat in a shop"},
+    {src:"assets/about/photo-17.jpg", alt:"Shelves of anime figures"},
+    {src:"assets/about/photo-18.jpg", alt:"Cliffside view of a blue coastline"},
+    {src:"assets/about/photo-19.jpg", alt:"Office lounge with an astronaut mural"},
+    {src:"assets/about/photo-20.jpg", alt:"Selfie at a zoo with a hippo in the background"},
+    {src:"assets/about/photo-21.jpg", alt:"Japanese matcha cookies in a box"},
+    {src:"assets/about/photo-22.jpg", alt:"Holding a matcha snack"},
+    {src:"assets/about/photo-23.jpg", alt:"Banana plant with a pink flower under a greenhouse roof"},
+    {src:"assets/about/photo-24.jpg", alt:"Interior of the Hagia Sophia"},
+    {src:"assets/about/photo-25.jpg", alt:"View of Istanbul's skyline from the water"},
+    {src:"assets/about/photo-26.jpg", alt:"Sitting with a friend outdoors"},
+    {src:"assets/about/photo-27.jpg", alt:"A plate of gyoza dumplings"},
+    {src:"assets/about/photo-28.jpg", alt:"A bowl of spicy beef noodle soup"},
+    {src:"assets/about/photo-29.jpg", alt:"An anime figure inside a claw machine"},
+    {src:"assets/about/photo-30.jpg", alt:"Holding a bottle of Japanese green tea"},
+    {src:"assets/about/photo-31.jpg", alt:"A platter of assorted sushi"},
+    {src:"assets/about/photo-32.jpg", alt:"Anime figures displayed in a shop window"},
+    {src:"assets/about/photo-33.jpg", alt:"Standing by a city skyline at night"},
+    {src:"assets/about/photo-34.jpg", alt:"A modified white sports car at night"},
+    {src:"assets/about/photo-35.jpg", alt:"Sitting outdoors making a heart shape with hands"},
+    {src:"assets/about/photo-36.jpg", alt:"Convenience store food shelves in Japan"},
+    {src:"assets/about/photo-37.jpg", alt:"Standing on a traditional street at sunset"},
+    {src:"assets/about/photo-38.jpg", alt:"A pasta dish with bread and orange juice"},
+    {src:"assets/about/photo-39.jpg", alt:"A church tower beside a canal with bicycles"},
+    {src:"assets/about/photo-40.jpg", alt:"A waffle topped with berries"}
   ];
 
   function shuffle(arr){
@@ -359,9 +364,7 @@
     fig.dataset.full = p.src;
     var img = document.createElement('img');
     img.src = p.src; img.alt = p.alt; img.loading = 'lazy';
-    var cap = document.createElement('figcaption');
-    cap.textContent = p.cap;
-    fig.appendChild(img); fig.appendChild(cap);
+    fig.appendChild(img);
     fig.addEventListener('click', function(){ openLightbox(p); });
     return fig;
   }
@@ -373,11 +376,13 @@
   }
 
   var shuffled = shuffle(PHOTOS);
-  var half = Math.ceil(shuffled.length / 2);
-  var row1 = shuffled.slice(0, half);
-  var row2 = shuffled.slice(half);
-  fillReel(document.getElementById('reel1'), row1, row1.length * 4.5);
-  fillReel(document.getElementById('reel2'), row2, row2.length * 4.5);
+  var third = Math.ceil(shuffled.length / 3);
+  var row1 = shuffled.slice(0, third);
+  var row2 = shuffled.slice(third, third * 2);
+  var row3 = shuffled.slice(third * 2);
+  fillReel(document.getElementById('reel1'), row1, Math.max(row1.length, 1) * 4.5);
+  fillReel(document.getElementById('reel2'), row2, Math.max(row2.length, 1) * 4.5);
+  fillReel(document.getElementById('reel3'), row3, Math.max(row3.length, 1) * 4.5);
 
   /* mobile menu */
   var burger = document.getElementById('burger');
@@ -407,13 +412,11 @@
   /* lightbox */
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightboxImg');
-  var lightboxCaption = document.getElementById('lightboxCaption');
   var lightboxClose = document.getElementById('lightboxClose');
 
   function openLightbox(p){
     lightboxImg.src = p.src;
     lightboxImg.alt = p.alt;
-    lightboxCaption.textContent = p.cap;
     lightbox.classList.add('open');
   }
   function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
@@ -421,13 +424,13 @@
   lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
 
-  /* fox jump */
-  var fox = document.getElementById('fox');
-  fox.addEventListener('click', function(){
-    fox.classList.remove('jump');
-    void fox.offsetWidth;
-    fox.classList.add('jump');
-    setTimeout(function(){ fox.classList.remove('jump'); }, 520);
+  /* zombie lunge */
+  var zombieWalker = document.getElementById('zombieWalker');
+  zombieWalker.addEventListener('click', function(){
+    zombieWalker.classList.remove('jump');
+    void zombieWalker.offsetWidth;
+    zombieWalker.classList.add('jump');
+    setTimeout(function(){ zombieWalker.classList.remove('jump'); }, 520);
   });
 })();
 </script>
